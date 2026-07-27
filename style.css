@@ -1,0 +1,232 @@
+/* Reseteo básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #050505; /* Fondo negro profundo */
+    color: #39ff14; /* Verde neón clásico */
+    font-family: 'Courier New', Courier, monospace; /* Fuente estilo terminal */
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Efecto de brillo para los títulos */
+h1, h2, h3 {
+    color: #39ff14;
+    text-shadow: 0 0 5px #39ff14, 0 0 10px rgba(57, 255, 20, 0.5);
+    margin-bottom: 1rem;
+    font-weight: normal;
+}
+
+header {
+    margin-bottom: 3rem;
+    border-bottom: 1px solid #39ff14;
+    padding-bottom: 2rem;
+}
+
+.subtitle {
+    opacity: 0.8;
+    margin-top: 0.5rem;
+}
+
+/* Animación del cursor parpadeante del título */
+.cursor {
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+section {
+    margin-bottom: 4rem;
+}
+
+/* Cuadrícula de proyectos */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.project-card {
+    border: 1px solid #39ff14;
+    padding: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 8px rgba(57, 255, 20, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Efecto hover: se ilumina más al pasar el mouse */
+.project-card:hover {
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.6);
+    transform: translateY(-5px);
+    background-color: rgba(57, 255, 20, 0.05);
+}
+
+a {
+    color: #39ff14;
+    text-decoration: none;
+    border-bottom: 1px dashed #39ff14;
+}
+
+a:hover {
+    text-shadow: 0 0 8px #39ff14;
+}
+
+footer {
+    text-align: center;
+    border-top: 1px solid #39ff14;
+    padding-top: 2rem;
+    margin-top: 4rem;
+
+}
+
+    
+/* --- Estilos para Imágenes y Videos --- */
+
+.media-item {
+    width: 100%; /* Para que no se salgan de la tarjeta */
+    height: auto;
+    margin: 1rem 0; /* Espacio arriba y abajo */
+    border: 1px solid #39ff14; /* Borde verde neón */
+    background-color: #000;
+    
+    /* Efecto Cyberpunk: Blanco y negro con alto contraste */
+    filter: grayscale(100%) contrast(120%) brightness(80%);
+    transition: all 0.4s ease;
+}
+
+/* Efecto hover: Recupera el color y brilla al pasar el mouse */
+.media-item:hover {
+    filter: grayscale(0%) contrast(100%) brightness(100%);
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.6);
+}
+
+/* Ajustes para los controles del video (opcional) */
+video.media-item {
+    outline: none;
+}
+/* --- Nuevos Estilos para el Header (Foto y Texto) --- */
+
+.header-content {
+    display: flex; /* Alinea los elementos en una fila */
+    align-items: center; /* Centra verticalmente la foto y el texto */
+    gap: 2rem; /* Espacio entre la foto y el texto */
+}
+
+.profile-pic {
+    width: 150px; /* Tamaño de la foto */
+    height: 150px;
+    border-radius: 50%; /* Hace la foto circular */
+    border: 3px solid #39ff14; /* Borde verde neón */
+    object-fit: cover; /* Asegura que la imagen no se deforme al recortarse */
+    
+    /* Aplicamos el mismo efecto Cyberpunk que a los proyectos */
+    filter: grayscale(100%) contrast(120%) brightness(80%);
+    transition: all 0.4s ease;
+}
+
+/* Efecto hover para la foto de perfil */
+.profile-pic:hover {
+    filter: grayscale(0%) contrast(100%) brightness(100%);
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.7);
+}
+
+.header-text {
+    flex: 1; /* Permite que el texto ocupe el espacio restante */
+}
+
+/* Ajuste responsive para móviles: Foto arriba, texto abajo */
+@media (max-width: 600px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* --- Nuevos Estilos para el Footer (Redes Sociales) --- */
+
+.social-links {
+    margin: 2rem 0; /* Espacio arriba y abajo */
+    display: flex; /* Alinea los enlaces en una fila */
+    justify-content: center; /* Centra los enlaces horizontalmente */
+    gap: 1.5rem; /* Espacio entre cada enlace */
+    flex-wrap: wrap; /* Permite que los enlaces bajen si no caben en pantalla */
+}
+
+.social-link {
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #39ff14;
+    text-transform: uppercase; /* Todo en mayúsculas */
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+/* Efecto hover para los enlaces de redes sociales */
+.social-link:hover {
+    background-color: #39ff14; /* Fondo verde al pasar el mouse */
+    color: #050505; /* Letras negras para contraste */
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.6);
+}
+
+/* Ajustes para el texto de copyright */
+.copyright {
+    font-size: 0.9rem;
+    opacity: 0.6;
+    margin-top: 2rem;
+}
+body::before {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 2;
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none; /* Esto permite que puedas hacer clic a través de las líneas */
+}
+.skill-item {
+    margin-bottom: 1.5rem;
+}
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    border: 1px solid #39ff14;
+    margin-top: 5px;
+    background: rgba(57, 255, 20, 0.05);
+}
+.progress-fill {
+    height: 100%;
+    background-color: #39ff14;
+    box-shadow: 0 0 10px #39ff14;
+}
+.btn-cv {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 10px 20px;
+    border: 2px solid #39ff14;
+    color: #39ff14;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.btn-cv:hover {
+    background: #39ff14;
+    color: #000;
+    box-shadow: 0 0 20px #39ff14;
+}
